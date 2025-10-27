@@ -1,0 +1,19 @@
+{
+    "Projects": 
+        [
+            {
+                "Name": "portfolio",
+                "Date": "08.2024",
+                "GitHubUrl": "https://github.com/AnimusPL/portfolio",
+                "TestUrl": "",
+                "Description": "Ph79"
+            },
+            {
+                "Name": "js-game1",
+                "Date": "02.2024",
+                "GitHubUrl": "https://github.com/AnimusPL/js-game1",
+                "TestUrl": "projects/js-game1",
+                "Description": "Ph80"
+            }
+        ]
+}
