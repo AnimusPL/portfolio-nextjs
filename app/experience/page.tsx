@@ -1,6 +1,6 @@
 export default function Experience() {
   return (
-    <div className="d-flex flex-column gap-3 pb-5">
+    <div className="flex flex-col gap-3 pb-5">
       <a>
         <span>
           Jestem frontend developerem z kilkuletnim doświadczeniem w
