@@ -60,10 +60,10 @@ export default function RootLayout({
             </div>
 
             {/* Dane osobowe */}
-            <div className="pt-3 text-[50px] font-normal whitespace-nowrap">
+            <div className="text-[50px] font-normal whitespace-nowrap">
               Piotr Bogus
             </div>
-            <div className="py-1 text-[16px] font-normal whitespace-nowrap">
+            <div className="text-[16px] font-normal whitespace-nowrap">
               Programista Frontend
             </div>
 
@@ -90,13 +90,13 @@ export default function RootLayout({
             {/* Menu główne */}
             <nav className="flex flex-col text-[16px] font-normal px-6 py-2 gap-3 portfolio-menu">
               <span className="flex items-center gap-2 leading-[25px] w-fit">
-                — <span className="cursor-pointer hover:text-blue-400 portfolio-menu-link">Doświadczenie</span>
+                — <span className="cursor-pointer portfolio-menu-link">Doświadczenie</span>
               </span>
               <span className="flex items-center gap-2 leading-[25px] w-fit">
-                — <span className="cursor-pointer hover:text-blue-400 portfolio-menu-link">Certyfikaty</span>
+                — <span className="cursor-pointer portfolio-menu-link">Certyfikaty</span>
               </span>
               <span className="flex items-center gap-2 leading-[25px] w-fit">
-                — <span className="cursor-pointer hover:text-blue-400 portfolio-menu-link">Projekty</span>
+                — <span className="cursor-pointer portfolio-menu-link">Projekty</span>
               </span>
             </nav>
 
