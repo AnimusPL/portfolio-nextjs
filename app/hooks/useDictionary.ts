@@ -19,9 +19,17 @@ export default function useDictionary(initialLang: LanguageCode = "pl") {
         console.error("Błąd ładowania tłumaczenia:", err);
       }
     };
-
     loadLanguage();
   }, [language]);
 
-  return { dictionary, language, setLanguage };
+  useEffect(() => {
+    const savedLang = (localStorage.getItem("lang") as LanguageCode) || "pl";
+    setLanguage(savedLang);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("lang", language);
+  }, [language]);
+
+  return { language, setLanguage, dictionary };
 }

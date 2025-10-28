@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLang } from "../context/LangContext";
 
 export default function PortfolioMenu() {
+  const { dictionary } = useLang()
   return (
     <div className="flex flex-col w-[30%] portfolio-frame-menu">
       {/* Ikona hamburgera */}
@@ -23,7 +25,7 @@ export default function PortfolioMenu() {
         Piotr Bogus
       </div>
       <div className="text-[16px] font-normal whitespace-nowrap">
-        Programista Frontend
+        {dictionary.Ph2}
       </div>
 
       {/* Przełącznik języka */}
@@ -33,14 +35,32 @@ export default function PortfolioMenu() {
 
       {/* Menu główne */}
       <nav className="flex flex-col text-[16px] font-normal px-6 py-2 gap-3 portfolio-menu">
-        <Link href="/experience" className="flex items-center gap-2 leading-[25px] w-fit">
-          — <span className="cursor-pointer portfolio-menu-link">Doświadczenie</span>
+        <Link
+          href="/experience"
+          className="flex items-center gap-2 leading-[25px] w-fit"
+        >
+          —{" "}
+          <span className="cursor-pointer portfolio-menu-link">
+            {dictionary.Ph3}
+          </span>
         </Link>
-        <Link href="/certificates" className="flex items-center gap-2 leading-[25px] w-fit">
-          — <span className="cursor-pointer portfolio-menu-link">Certyfikaty</span>
+        <Link
+          href="/certificates"
+          className="flex items-center gap-2 leading-[25px] w-fit"
+        >
+          —{" "}
+          <span className="cursor-pointer portfolio-menu-link">
+            {dictionary.Ph4}
+          </span>
         </Link>
-        <Link href="/projects" className="flex items-center gap-2 leading-[25px] w-fit">
-          — <span className="cursor-pointer portfolio-menu-link">Projekty</span>
+        <Link
+          href="/projects"
+          className="flex items-center gap-2 leading-[25px] w-fit"
+        >
+          —{" "}
+          <span className="cursor-pointer portfolio-menu-link">
+            {dictionary.Ph5}
+          </span>
         </Link>
       </nav>
 
@@ -55,9 +75,15 @@ export default function PortfolioMenu() {
             src="/assets/images/hamburger.svg"
           />
         </div>
-        <span className="cursor-pointer hover:text-blue-400">Doświadczenie</span>
-        <span className="cursor-pointer hover:text-blue-400">Certyfikaty</span>
-        <span className="cursor-pointer hover:text-blue-400">Projekty</span>
+        <span className="cursor-pointer hover:text-blue-400">
+          {dictionary.Ph3}
+        </span>
+        <span className="cursor-pointer hover:text-blue-400">
+          {dictionary.Ph4}
+        </span>
+        <span className="cursor-pointer hover:text-blue-400">
+          {dictionary.Ph5}
+        </span>
       </div>
     </div>
   );

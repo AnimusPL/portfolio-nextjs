@@ -2,9 +2,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-import Link from "next/link";
 import BackgroundCanvas from "./backgroundCanvas";
-import LanguageSwitcher from "./components/LanguageSwitcher";
+import { LangProvider } from "./context/LangContext";
 import PortfolioMenu from "./components/PortfolioMenu";
 
 export const metadata: Metadata = {
@@ -38,16 +37,18 @@ export default function RootLayout({
         </div>
 
         {/* Główna ramka */}
-        <div className="flex flex-row w-full h-full portfolio-frame">
-          {/* Menu po lewej */}
-          <PortfolioMenu />
+        <LangProvider>
+          <div className="flex flex-row w-full h-full portfolio-frame">
+            {/* Menu po lewej */}
+            <PortfolioMenu />
 
-          {/* Zawartość po prawej */}
-          <div className="flex flex-row h-full w-[70%] font-medium p-4 gap-5 portfolio-content">
-            <div className="portfolio-content-inner flex-1">{children}</div>
-            <div className="custom-scrollbar"></div>
+            {/* Zawartość po prawej */}
+            <div className="flex flex-row h-full w-[70%] font-medium p-4 gap-5 portfolio-content">
+              <div className="portfolio-content-inner flex-1">{children}</div>
+              <div className="custom-scrollbar"></div>
+            </div>
           </div>
-        </div>
+        </LangProvider>
       </body>
     </html>
   );

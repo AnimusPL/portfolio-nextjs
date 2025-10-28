@@ -1,38 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import useDictionary, { LanguageCode } from "../hooks/useDictionary";
+import { useState } from "react";
+import { useLang } from "../context/LangContext";
+import { LanguageCode } from "../hooks/useDictionary";
 
 export default function LanguageSwitcher() {
-  const [mounted, setMounted] = useState(false); // <- nowa flaga
-  const [storedLang, setStoredLang] = useState<LanguageCode>("pl");
-  const { language, setLanguage } = useDictionary(storedLang);
+  const { language, setLanguage } = useLang();
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    // zaznaczamy, że komponent jest zamontowany na kliencie
-    setMounted(true);
-
-    const savedLang = (localStorage.getItem("lang") as LanguageCode) || "pl";
-    setStoredLang(savedLang);
-    setLanguage(savedLang);
-  }, []);
-
-  useEffect(() => {
-    if (mounted) localStorage.setItem("lang", language);
-  }, [language, mounted]);
+  const langs: LanguageCode[] = ["pl", "en", "de"];
 
   const changeLang = (newLang: LanguageCode) => {
     setLanguage(newLang);
-    localStorage.setItem("lang", newLang);
-    setStoredLang(newLang);
     setOpen(false);
-    window.location.reload();
   };
-
-  if (!mounted) return null; // <- nie renderujemy nic dopóki SSR nie zakończy
-
-  const langs: LanguageCode[] = ["pl", "en", "de"];
 
   return (
     <div className="relative">
