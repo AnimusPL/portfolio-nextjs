@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col border border-gray-300 rounded-xl p-6 gap-4 shadow-sm hover:shadow-md transition-all portfolio-project bg-white"
+            className="flex flex-col border p-6 gap-4 portfolio-project"
           >
             {/* Nazwa + ikony */}
             <div className="flex flex-row items-center gap-3 text-[#121212] text-xl font-semibold">
